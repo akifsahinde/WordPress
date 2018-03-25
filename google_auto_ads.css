@@ -1,0 +1,24 @@
+/*
+Google AutoAds sind problematisch, weil sie nicht das Wort "Anzeige" aufführen können.
+Um diesen Schönheitsfehler auszubügeln kann man allerdings per CSS die Klasse ansprechen,
+die bei jeder Ausgabe von Google AutoAds eingebunden wird.
+und per Befehl "content" vor oder nach der Anzeige das Wort "Anzeige" einbinden. 
+Die unteren CodeZeilen zeigen genau diesen Prozess.
+*/
+
+*/Erst die Klasse ansprechen:*/
+.google-auto-placed {
+	font-size: 12px;
+	font-family: "Heebo",sans-serif;
+	font-style: italic;	
+}
+
+/*Dann den Text per Content nach der Anzeige einbinden*/
+.google-auto-placed::after {
+    content: "Anzeige";
+}
+
+/*Oder den Text per Content vor der Anzeige einbinden*/
+.google-auto-placed::before {
+    content: "Anzeige";
+}
