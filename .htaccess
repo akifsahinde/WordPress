@@ -18,3 +18,16 @@ RedirectMatch 301 /([0-9]+)/([0-9]+)/([0-9]+)/(.*)$ https://www.example.com/$4
 
 #Beispiel für eine 301-Weiterleitung
 Redirect 301 /seite1/ https://www.example.com/seite2/
+
+#Ausschluss von schädlichen Bots oder Programmen zum Spiegeln der Seite
+BrowserMatchNoCase "HTTrack" bots
+BrowserMatchNoCase "SEOkicks-Robot" bots
+BrowserMatchNoCase "AhrefsBot" bots
+BrowserMatchNoCase "Uptimebot" bots
+BrowserMatchNoCase "Cliqzbot" bots
+BrowserMatchNoCase "ssearch_bot" bots
+BrowserMatchNoCase "Sogou" bots
+
+Order Allow,Deny
+Allow from ALL
+Deny from env=bots
