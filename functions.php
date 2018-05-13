@@ -11,6 +11,9 @@ function tj_dequeue_devicepx() {
 }
 add_action( 'wp_enqueue_scripts', 'tj_dequeue_devicepx' );
 
+/**
+ *  Funktion um IP-Adressen bei Kommentaren rauszufiltern
+ */
 function wp_remove_commentip( $comment_author_ip ) {
 return '';
 }
